@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../core/widgets/primary_button.dart';
-import '../../../core/widgets/app_text_field.dart';
+import '../../../core/widgets/widgets.dart';
 import '../../../core/config/providers.dart';
 import '../../../core/config/route_names.dart';
 import '../../dashboard/data/dashboard_providers.dart';
@@ -60,33 +59,33 @@ class _LoginPageState extends ConsumerState<LoginPage> {
           child: Column(
             children: [
               const SizedBox(height: 16),
-              AppTextField.username(controller: _usernameCtrl),
-              const SizedBox(height: 16),
-              AppTextField.password(
-                controller: _passwordCtrl,
-                onSubmit: _submit,
-              ),
-              const SizedBox(height: 28),
-              PrimaryButton(
-                label: authState.loading ? 'Signing In...' : 'Sign In',
-                loading: authState.loading,
-                onPressed: authState.loading ? null : _submit,
-              ),
-              const SizedBox(height: 12),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: authState.loading ? null : () => Navigator.pushNamed(context, RouteNames.register),
-                  child: const Text('Daftarkan Akun'),
+              FormCard(
+                child: Column(
+                  children: [
+                    LabeledTextField(label: 'Username', controller: _usernameCtrl, prefixIcon: const Icon(Icons.person)),
+                    const SizedBox(height: 12),
+                    LabeledTextField(label: 'Password', controller: _passwordCtrl, obscureText: true, prefixIcon: const Icon(Icons.lock)),
+                    const SizedBox(height: 16),
+                    FormActions(
+                      label: authState.loading ? 'Signing In...' : 'Sign In',
+                      loading: authState.loading,
+                      onPressed: authState.loading ? (){} : _submit,
+                    ),
+                    const SizedBox(height: 8),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: authState.loading ? null : () => Navigator.pushNamed(context, RouteNames.register),
+                        child: const Text('Daftarkan Akun'),
+                      ),
+                    ),
+                    if (authState.error != null) ...[
+                      const SizedBox(height: 12),
+                      Text(authState.error!, style: const TextStyle(color: Colors.redAccent)),
+                    ],
+                  ],
                 ),
               ),
-              if (authState.error != null) ...[
-                const SizedBox(height: 16),
-                Text(
-                  authState.error!,
-                  style: const TextStyle(color: Colors.redAccent),
-                ),
-              ],
             ],
           ),
         ),

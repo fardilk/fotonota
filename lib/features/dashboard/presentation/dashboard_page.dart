@@ -279,7 +279,8 @@ Future<void> _showCreateProfileDialog(BuildContext context, WidgetRef ref, {User
                 await ref.read(profileRepoProvider).createProfile(name: nameCtrl.text.trim());
                 ref.read(dashboardRefreshProvider.notifier).bump();
                 // ignore editing extended fields for brevity
-                Navigator.pop(ctx);
+                  if (!context.mounted) return;
+                  Navigator.pop(context);
               } finally { setState(()=> submitting = false); }
             },
             child: Text(submitting ? 'Saving...' : 'Save'),

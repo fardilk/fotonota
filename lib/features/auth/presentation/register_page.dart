@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../core/widgets/app_text_field.dart';
-import '../../../core/widgets/primary_button.dart';
+import '../../../core/widgets/widgets.dart';
 import '../../../core/config/providers.dart';
 
 class RegisterPage extends ConsumerStatefulWidget {
@@ -73,34 +72,24 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 8),
-              AppTextField.username(controller: _usernameCtrl),
-              const SizedBox(height: 16),
-              AppTextField.password(controller: _passwordCtrl, last: false),
-              const SizedBox(height: 16),
-              AppTextField(
-                controller: _confirmCtrl,
-                label: 'Confirm Password',
-                hint: 'Re-enter password',
-                obscure: true,
-                prefixIcon: const Icon(Icons.lock_outline),
-                validator: _confirmValidator,
-                textInputAction: TextInputAction.done,
-                onSubmittedAction: _submit,
-              ),
-              const SizedBox(height: 28),
-              PrimaryButton(
-                label: _submitting ? 'Registering...' : 'Register',
-                loading: _submitting,
-                onPressed: _submitting ? null : _submit,
-              ),
-              if (_error != null) ...[
-                const SizedBox(height: 16),
-                Text(_error!, style: const TextStyle(color: Colors.redAccent)),
-              ],
-              const SizedBox(height: 24),
-              TextButton(
-                onPressed: _submitting ? null : () => Navigator.pop(context),
-                child: const Text('Back to Login'),
+              FormCard(
+                child: Column(
+                  children: [
+                    LabeledTextField(label: 'Username', controller: _usernameCtrl, prefixIcon: const Icon(Icons.person)),
+                    const SizedBox(height: 12),
+                    LabeledTextField(label: 'Password', controller: _passwordCtrl, obscureText: true, prefixIcon: const Icon(Icons.lock)),
+                    const SizedBox(height: 12),
+                    LabeledTextField(label: 'Confirm Password', controller: _confirmCtrl, obscureText: true, prefixIcon: const Icon(Icons.lock_outline), validator: _confirmValidator),
+                    const SizedBox(height: 16),
+                    FormActions(label: _submitting ? 'Registering...' : 'Register', loading: _submitting, onPressed: _submitting ? (){} : _submit),
+                    if (_error != null) ...[
+                      const SizedBox(height: 12),
+                      Text(_error!, style: const TextStyle(color: Colors.redAccent)),
+                    ],
+                    const SizedBox(height: 8),
+                    TextButton(onPressed: _submitting ? null : () => Navigator.pop(context), child: const Text('Back to Login')),
+                  ],
+                ),
               ),
             ],
           ),
