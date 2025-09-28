@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:snapcash_mobile/main.dart';
+import 'package:fotonota/main.dart';
 
 void main() {
   testWidgets('App builds splash screen', (WidgetTester tester) async {

@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:snapcash_mobile/features/auth/data/auth_service.dart';
-import 'package:snapcash_mobile/features/auth/models/auth_tokens.dart';
-import 'package:snapcash_mobile/core/services/api_client.dart';
+import 'package:fotonota/features/auth/data/auth_service.dart';
+import 'package:fotonota/features/auth/models/auth_tokens.dart';
+import 'package:fotonota/core/services/api_client.dart';
 import 'helpers/mock_adapter.dart';
-import 'package:snapcash_mobile/core/errors/api_exception.dart';
+import 'package:fotonota/core/errors/api_exception.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:snapcash_mobile/core/errors/api_exception.dart';
+import 'package:fotonota/core/errors/api_exception.dart';
 
 void main() {
   group('ApiException', () {

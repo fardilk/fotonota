@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:snapcash_mobile/features/auth/data/auth_service.dart';
-import 'package:snapcash_mobile/core/config/constants.dart';
-import 'package:snapcash_mobile/core/services/api_client.dart';
+import 'package:fotonota/features/auth/data/auth_service.dart';
+import 'package:fotonota/core/config/constants.dart';
+import 'package:fotonota/core/services/api_client.dart';
 import 'package:dio/dio.dart';
 import 'dart:math';
 
