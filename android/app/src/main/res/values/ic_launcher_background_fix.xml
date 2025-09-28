@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Fix: some merged libraries produced an invalid literal 'transparent' for
-         ic_launcher_background. Provide a proper color resource so aapt can
-         compile values. Using fully transparent ARGB value. -->
-    <color name="ic_launcher_background">#00000000</color>
-</resources>
