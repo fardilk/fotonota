@@ -52,3 +52,6 @@ android/key.properties
 *.env
 /.env
 /.credentials
+
+# Demo APK (kept locally)
+fotonota-ui-only.apk
