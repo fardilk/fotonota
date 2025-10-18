@@ -4,7 +4,7 @@ import 'features/auth/presentation/login_page.dart';
 import 'features/auth/presentation/login_success_page.dart';
 import 'features/auth/presentation/register_page.dart';
 import 'features/dashboard/presentation/dashboard_page.dart';
-import 'features/camera/presentation/camera_page.dart';
+import 'features/camera/presentation/pages/camera_page.dart';
 import 'features/report/presentation/report_page.dart';
 import 'features/report/presentation/revenue_page.dart';
 import 'features/splash/presentation/splash_page.dart';

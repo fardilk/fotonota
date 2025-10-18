@@ -47,5 +47,11 @@
 		<true/>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<key>NSCameraUsageDescription</key>
+		<string>Fotonota needs camera access to capture receipts.</string>
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>Fotonota needs photo library access to pick images.</string>
+		<key>NSPhotoLibraryAddUsageDescription</key>
+		<string>Fotonota needs permission to save photos.</string>
 	</dict>
 </plist>

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'core/config/app_theme.dart';
 import 'core/config/route_names.dart';
-import 'core/config/providers.dart';
 import 'routes.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
