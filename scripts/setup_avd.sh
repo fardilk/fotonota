@@ -3,14 +3,14 @@ set -euo pipefail
 
 # setup_avd.sh
 # Creates Android SDK cmdline-tools, installs platform-tools/emulator/system-image,
-# creates an AVD called 'snapcash_avd' and launches it.
+# creates an AVD called 'fotonota_avd' and launches it.
 # Run this script locally; it will prompt to accept licenses.
 
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd -P)"
 SDK_ROOT="${ANDROID_SDK_ROOT:-$HOME/Android/Sdk}"
 CMDLINE_ZIP_URL="https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip"
 CMDLINE_DIR="$SDK_ROOT/cmdline-tools/latest"
-AVD_NAME="snapcash_avd"
+AVD_NAME="fotonota_avd"
 SYS_IMG="system-images;android-33;google_apis;x86_64"
 
 echo "Using SDK root: $SDK_ROOT"

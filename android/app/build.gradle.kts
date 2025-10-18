@@ -39,7 +39,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.snapcash.app"
+    applicationId = "com.snapcash.app"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SnapCash',
+      title: 'Fotonota',
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       initialRoute: RouteNames.splash,

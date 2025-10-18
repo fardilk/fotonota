@@ -2,7 +2,7 @@
     <!-- Allow network access -->
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:label="snapcash"
+    android:label="Fotonota"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"

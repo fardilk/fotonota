@@ -1,3 +1,3 @@
 This folder contains the app logo used by splash and launcher icons.
-Current file used by config: snapcash_logo.png (contents replaced with fotonota logo).
+Current file used by config: snapcash_logo.png (contents replaced with Fotonota logo). Consider renaming config later.
 Recommended size: 1024x1024 (will be resized for splash & onboarding).

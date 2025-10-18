@@ -1,7 +1,7 @@
-# SnapCash 💸
+# Fotonota ��💸
 
-SnapCash adalah aplikasi pencatatan keuangan yang **ringan, praktis, dan usable**.  
-Cukup **snap (foto/scan)** nota atau struk, lalu SnapCash akan otomatis mengenali nominal dan mencatat transaksi Anda.  
+Fotonota adalah aplikasi pencatatan keuangan berbasis foto yang **ringan, praktis, dan usable**.  
+Cukup **foto/scan** nota atau struk, lalu Fotonota akan otomatis mengenali nominal dan mencatat transaksi Anda.  
 Cocok untuk UMKM, warung, maupun personal yang ingin tracking pemasukan dan pengeluaran dengan cepat tanpa ribet.
 
 ---
@@ -18,8 +18,8 @@ Cocok untuk UMKM, warung, maupun personal yang ingin tracking pemasukan dan peng
 
 ### 1. Clone repo
 ```bash
-git clone https://github.com/username/snapcash.git
-cd snapcash
+git clone https://github.com/fardilk/fotonota.git
+cd fotonota
 
 
 ## ☕ Support Developer

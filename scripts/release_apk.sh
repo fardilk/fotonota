@@ -6,8 +6,8 @@ set -euo pipefail
 
 PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd -P)"
 BUILD_OUTPUT="$PROJECT_ROOT/build/app/outputs/flutter-apk/app-release.apk"
-DEST_DIR="/home/tw-fardil/Documents/Fardil/Project/snapcash-mobile"
-DEST_APK="$DEST_DIR/snapcash-app-release.apk"
+DEST_DIR="/home/tw-fardil/Documents/Fardil/Project/fotonota"
+DEST_APK="$DEST_DIR/fotonota-app-release.apk"
 
 echo "Project root: $PROJECT_ROOT"
 
@@ -21,7 +21,7 @@ flutter pub get
 echo "Building release APK..."
 # Allow override of API base via env; default to prod
 # Support both API_BASE_URL and DAPI_BASE_URL (the latter requested by user)
-: "${API_BASE_URL:=${DAPI_BASE_URL:-https://snapcash-api.fardil.com}}"
+: "${API_BASE_URL:=${DAPI_BASE_URL:-https://fotonota-api.fardil.com}}"
 echo "Using API_BASE_URL=$API_BASE_URL"
 # Pass the value into the Dart compiler so runtime picks it up from String.fromEnvironment
 flutter build apk --release --dart-define=API_BASE_URL="$API_BASE_URL"

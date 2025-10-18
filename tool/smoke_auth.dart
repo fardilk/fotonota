@@ -7,7 +7,7 @@ import 'package:dio/dio.dart';
 ///   dart run tool/smoke_auth.dart
 ///   dart -DAPI_BASE_URL=http://103.172.204.34:8081 run tool/smoke_auth.dart user pass
 Future<int> main(List<String> args) async {
-  final apiBase = const String.fromEnvironment('API_BASE_URL', defaultValue: 'https://snapcash-api.fardil.com');
+  final apiBase = const String.fromEnvironment('API_BASE_URL', defaultValue: 'https://fotonota-api.fardil.com');
   final username = args.isNotEmpty ? args[0] : 'usertest02';
   final password = args.length > 1 ? args[1] : 'test1234';
   final doRegister = args.length > 2 && args[2].toLowerCase().contains('reg');
