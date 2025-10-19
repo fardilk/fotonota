@@ -25,3 +25,6 @@ cd fotonota
 ## ☕ Support Developer
 Biar developernya makin semangat, bisa traktir kopi di sini:  
 [![Support Developer](https://img.shields.io/badge/☕-Traktir%20Kopi-orange)](https://teer.id/fardil_khalidi)
+
+
+Demo APK: fotonota-ui-only.apk v0.1
