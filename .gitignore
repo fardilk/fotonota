@@ -45,7 +45,7 @@ app.*.map.json
 /android/app/release
 
 # Local credential and keystore files
-android/app/google-services.json
+# google-services.json committed for CI (contains no sensitive data, just Firebase project config)
 android/key.properties
 *.jks
 *.keystore
