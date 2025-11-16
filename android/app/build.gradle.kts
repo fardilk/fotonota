@@ -3,7 +3,8 @@ import java.io.FileInputStream
 
 val keystorePropertiesFile = rootProject.file("key.properties")
 val keystoreProperties = Properties()
-if (keystorePropertiesFile.exists()) {
+val keystorePresent = keystorePropertiesFile.exists()
+if (keystorePresent) {
     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 }
 
@@ -16,12 +17,19 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        create("release") {
-            keyAlias = keystoreProperties["keyAlias"] as String?
-            keyPassword = keystoreProperties["keyPassword"] as String?
-            storeFile = file(keystoreProperties["storeFile"] as String?)
-            storePassword = keystoreProperties["storePassword"] as String?
+    if (keystorePresent) {
+        signingConfigs {
+            create("release") {
+                val alias = keystoreProperties["keyAlias"] as String?
+                val keyPwd = keystoreProperties["keyPassword"] as String?
+                val storePath = keystoreProperties["storeFile"] as String?
+                val storePwd = keystoreProperties["storePassword"] as String?
+
+                if (!alias.isNullOrBlank()) keyAlias = alias
+                if (!keyPwd.isNullOrBlank()) keyPassword = keyPwd
+                if (!storePath.isNullOrBlank()) storeFile = file(storePath)
+                if (!storePwd.isNullOrBlank()) storePassword = storePwd
+            }
         }
     }
 
@@ -48,7 +56,9 @@ android {
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("release")
+            if (keystorePresent) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             isMinifyEnabled = true
             isShrinkResources = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
