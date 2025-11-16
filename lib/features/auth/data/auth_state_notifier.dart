@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'auth_repository.dart';
-import '../models/auth_tokens.dart';
 
 enum AuthStatus { unknown, unauthenticated, authenticated }
 
@@ -29,7 +28,6 @@ class AuthStateNotifier extends StateNotifier<AuthState> {
     _init();
   }
   final AuthRepository _repo;
-  AuthTokens? _tokens;
 
   Future<void> _init() async {
     try {
@@ -48,7 +46,7 @@ class AuthStateNotifier extends StateNotifier<AuthState> {
   Future<bool> login(String username, String password) async {
     state = state.copyWith(loading: true, error: null);
     try {
-      _tokens = await _repo.login(username: username, password: password);
+      await _repo.login(username: username, password: password);
       String? me;
       try {
         me = await _repo.currentUsername();

@@ -45,7 +45,7 @@ flutter build apk --release -t lib/main_mock.dart \
 
 ## Mock coverage
 - Auth: Login/Register happy-paths
-- Dashboard: Profile prompt, totals, recent catatan, revenue chart (fake data)
+- Dashboard: Profile prompt, totals, Pendapatan Baru - Baru ini, revenue chart (fake data)
 - Camera: Preview & overlay UI
 - Onboarding/Splash: Normal flow via SharedPreferences
 
