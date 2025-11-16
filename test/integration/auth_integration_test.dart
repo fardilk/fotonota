@@ -1,15 +1,14 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fotonota/features/auth/data/auth_service.dart';
-import 'package:fotonota/core/config/constants.dart';
 import 'package:fotonota/core/services/api_client.dart';
 import 'package:dio/dio.dart';
 import 'dart:math';
 
 void main() {
-  final apiBase = AppConstants.apiBaseUrl;
-  final shouldRun = !apiBase.contains('localhost') && !apiBase.contains('10.0.2.2');
-
+  // Skip integration tests in test environment as TestWidgetsFlutterBinding blocks real HTTP
+  const skipReason = 'Integration tests require real HTTP - run manually outside test framework';
+  
   setUp(() async {
     // Ensure Flutter binding and in-memory shared preferences are ready.
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +25,7 @@ void main() {
       // Immediately login with the new user to confirm credentials work
       final tokens = await svc.login(username: username, password: 'test1234');
       expect(tokens.accessToken.isNotEmpty, true);
-    }, skip: shouldRun ? false : 'Skipping: API_BASE_URL points to localhost/emulator.');
+    }, skip: skipReason);
 
     test('login succeeds against backend', () async {
       final svc = AuthService();
@@ -42,6 +41,6 @@ void main() {
       final data = res.data as Map<String, dynamic>;
       expect(data.containsKey('total'), true);
       expect(data['total'], isA<int>());
-    }, skip: shouldRun ? false : 'Skipping: API_BASE_URL points to localhost/emulator.');
+    }, skip: skipReason);
   });
 }
