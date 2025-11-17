@@ -56,8 +56,12 @@ android {
 
     buildTypes {
         release {
-            if (keystorePresent) {
-                signingConfig = signingConfigs.getByName("release")
+            // Use release signing if keystore available, otherwise fall back to debug signing
+            // This ensures APKs are always signed and installable
+            signingConfig = if (keystorePresent) {
+                signingConfigs.getByName("release")
+            } else {
+                signingConfigs.getByName("debug")
             }
             isMinifyEnabled = true
             isShrinkResources = false
